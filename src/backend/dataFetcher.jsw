@@ -1,0 +1,20 @@
+import { fetch, getJSON } from 'wix-fetch';
+
+const url = "http://43.203.86.121/api/job-post/worker/list"
+
+export async function getDataWithGetMethod({url}) {
+  return await fetch(url, { method: "get" })
+  .then((httpResponse) => {
+    if (httpResponse.ok) {
+      return httpResponse.json()
+    } else {
+      return Promise.reject({
+        data: {},
+        message: "Fetch did not succeed",
+      });
+    }
+  })
+//   .then((json) => console.log(json.someKey))!
+  .catch((err) => console.log(err))
+}
+

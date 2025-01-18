@@ -1,0 +1,10 @@
+var accessToken = NaN
+
+export async function getToken(Token) {
+    return Token;
+}
+
+export async function setToken(Token) {
+    accessToken = Token;
+    console.log("setToken : ", accessToken)
+}

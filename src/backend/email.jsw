@@ -1,0 +1,38 @@
+import {sendWithService} from 'backend/sendGrid';
+
+import { fetch } from 'wix-fetch';
+
+export async function sendEmail(name, email, message) {
+    // 200 emails/day
+    const service_id = 'service_ft19xsu';
+    const template_id = 'template_nxwqp9j';
+    const user_id = 'Bl2StFYzpmc7YPEnM';
+
+
+    var data = {
+        service_id: service_id,
+        template_id: template_id,
+        user_id: user_id,
+        template_params: {
+            'name': name,
+            'email': email,
+            'message': message
+        }
+    };
+
+    // const url = "https://api.emailjs.com/api/v1.0/email/send"
+    // const emailResponse = fetch(url, {
+    //     method: "POST",
+    //     headers: {
+    //         'Content-Type' : 'application/json',
+    //     },
+    //     body: JSON.stringify(data)
+    //   })
+    //   if(!emailResponse.ok) {
+    //     throw new Error('Network response was not ok ' + emailResponse.statusText);
+    //   }
+    //   const responseData = await emailResponse.json()
+    //   return responseData
+  
+    // https://limejuicer.tistory.com/1732 참조
+}

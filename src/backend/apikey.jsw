@@ -1,0 +1,5 @@
+const kakaoApiKey = "483e4425efc50d6891881bece6845a9e";
+
+export async function getApiKey() {
+    return kakaoApiKey
+}
